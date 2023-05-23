@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Feature.ContentSearch": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:60939;http://localhost:60940"
+    }
+  }
+}

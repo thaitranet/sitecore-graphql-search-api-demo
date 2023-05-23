@@ -1,0 +1,45 @@
+﻿query BasicSearch (
+  $language: String!
+  $rootItem: String!
+  $fieldsEqual: [ItemSearchFieldQuery]
+  $facetOn: [String!]
+  $keyword: String
+  $after: String!
+  $first: Int
+){
+  search(
+    language: $language
+    rootItem: $rootItem
+    fieldsEqual: $fieldsEqual
+    facetOn: $facetOn
+    keyword: $keyword
+    after: $after,
+    first: $first
+  ) {
+    facets {
+      name
+      values {
+        value
+        count
+      }
+    }
+    results {
+      items {
+        id
+        name
+        path
+        templateName
+        language
+        version
+        score
+      }
+      totalCount
+      pageInfo {
+        endCursor,
+          hasNextPage,
+        hasPreviousPage,
+        startCursor
+      }
+    }
+  }
+}

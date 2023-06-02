@@ -7,7 +7,7 @@ namespace Feature.ContentSearch.Extensions
     {
         public static void AddFeatureContentSearch(this IServiceCollection serviceCollection)
         {
-            serviceCollection.AddSingleton<IGraphQLProductsService, GraphQLProductsService>();
+            serviceCollection.AddSingleton<IGraphQLService, GraphQLService>();
         }
 
     }

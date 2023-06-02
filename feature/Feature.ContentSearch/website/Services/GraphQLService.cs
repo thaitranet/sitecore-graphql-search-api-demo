@@ -4,17 +4,17 @@ using System.Threading.Tasks;
 
 namespace Feature.ContentSearch.Services
 {
-    public interface IGraphQLProductsService
+    public interface IGraphQLService
     {
         Task<SearchResponse> Search(SearchRequest request, bool isEditingMode);
     }
 
-    public class GraphQLProductsService : IGraphQLProductsService
+    public class GraphQLService : IGraphQLService
     {
         private readonly IGraphQLProvider _graphQLProvider;
 
 
-        public GraphQLProductsService(IGraphQLProvider graphQLProvider)
+        public GraphQLService(IGraphQLProvider graphQLProvider)
         {
             _graphQLProvider = graphQLProvider;
         }

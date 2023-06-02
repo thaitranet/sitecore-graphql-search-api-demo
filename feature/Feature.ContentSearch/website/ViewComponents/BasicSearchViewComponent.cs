@@ -9,11 +9,11 @@ namespace Feature.ContentSearch.ViewComponents
 {
     public class BasicSearchViewComponent : ViewComponent
     {
-        private readonly IGraphQLProductsService _graphQLProductsService;
+        private readonly IGraphQLService _graphQLService;
 
-        public BasicSearchViewComponent(IGraphQLProductsService graphQLProductsService)
+        public BasicSearchViewComponent(IGraphQLService graphQLService)
         {
-            _graphQLProductsService = graphQLProductsService;
+            _graphQLService = graphQLService;
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
@@ -37,7 +37,7 @@ namespace Feature.ContentSearch.ViewComponents
                 first = 10
             };
 
-            var response = await _graphQLProductsService.Search(request, isEditingMode);
+            var response = await _graphQLService.Search(request, isEditingMode);
 
             response.keyword = Request.Query["keyword"];
 
